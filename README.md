@@ -2,4 +2,4 @@
 [![CI](https://github.com/cashmy/gh-actions/actions/workflows/complex.yml/badge.svg)](https://github.com/cashmy/gh-actions/actions/workflows/complex.yml)
 
 # gh-actions
-Temp repository to test/learn specifics about gitHub actions
+Temp repository to setup test/learning example/specifics about gitHub actions
