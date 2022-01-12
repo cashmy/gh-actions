@@ -6,38 +6,33 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-
-  job1:
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Print Date
-        run: echo Hello, world!
-  job2:
-    runs-on: windows-lates
+        run: date
+  windows:
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Print Date
-        run: echo Hello, world!
-  job3:
+        run: date
+  macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Print Date
-        run: echo Hello, world!
-        
-  job4:
+        run: date
+
+  depends:
     runs-on: windows-latest
-    needs: [job1, job2, job3]
+    needs: [ubuntu, windows, macos]
     steps:
-      - uses: actions/checkout@v2
       - name: Print Date
-        run: echo Hello, world!
+        run: date
